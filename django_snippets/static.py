@@ -5,4 +5,12 @@
 STATIC_URL = 'static/'
 
 # create
+
 STATICFILES_DIRS = [BASE_DIR/'static']
+
+
+# usage
+
+{% load static %} # top
+
+<link rel="stylesheet" href="{% static 'css/main.css' %}"> # head
