@@ -1,0 +1,29 @@
+instalation
+
+sudo pacman -S postgresql
+
+--------------------------------------
+
+shell 
+
+sudo -iu postgres
+
+--------------------------------------
+
+init database folder
+
+initdb -D /var/lib/postgres/data
+
+--------------------------------------
+
+start postgres
+
+sudo systemctl start postgresql
+
+--------------------------------------
+
+create user or database
+
+createuser --interactive
+createdb *database_name*
+
