@@ -2,11 +2,12 @@
 
 # settings.py
 
-STATIC_URL = 'static/'
+STATIC_URL = "static/"
 
 # create
 
-STATICFILES_DIRS = [BASE_DIR/'static']
+STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = [BASE_DIR / "static"]
 
 
 # usage
