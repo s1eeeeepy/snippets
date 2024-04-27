@@ -18,7 +18,7 @@ class CustomUserCreationForm(UserCreationForm):
 
 from .forms import CustomUserCreationForm
 from django.shortcuts import redirect, render
-from django.contrib import message
+from django.contrib import messages
 
 # log in after registration
 
@@ -28,7 +28,7 @@ def registration(request):
     # can't reach page if user is logged in
     if request.user.is_authenticated:
         return redirect("URL_NAME")
-    form = CustomUserCreationFrom(request.POST)
+    form = CustomUserCreationForm(request.POST)
     if request.method == "POST":
         if form.is_valid():
             # set username to lowercase

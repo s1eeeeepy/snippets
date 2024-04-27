@@ -1,0 +1,67 @@
+CREATE -- create data
+CREATE TABLE *table_name* (*table_fields(*field_char_len*)*); -- create new table with name of *table_name* and
+specified fields in *table_fields*
+
+data types are specified as field is created
+
+CREATE TABLE users (
+    id BIGINT NOT NULL PRIMARY KEY,
+    first_name VARCHAR(64) NOT NULL,
+    last_name VARCHAR(64) NOT NULL,
+    email VARCHAR(128) NOT NULL
+);
+
+------------------------------
+
+INSERT -- insert data
+INSERT INTO *table_name* (*table_fields*);
+VALUES (*values*);
+
+INSERT INTO users (id, first_name, last_name, email)
+VALUES (1, 'First', 'Last', 'first_last@mail.com'); !! strings are specified with '' !!
+
+--------------------------------
+
+UPDATE -- update data in table
+
+UPDATE *table_name* SET
+*table_column_name* = *new_value*
+!! will change data in every object !! use filter word WHERE to specify object !!
+
+UPDATE users SET
+email = 'new_email@mail.com'
+WHERE id = 1;
+
+-------------------------------
+
+WHERE -- filter word
+
+WHERE *column_name* = *column_value*;
+
+_______________________________
+
+DELETE -- delete object
+
+DELETE FROM *table_name*
+
+!! use filter to delete specified objects !!
+
+DELETE FROM users
+WHERE *filter_logic*;
+
+--------------------------------
+
+SELECT -- select objects
+SELECT *objects* FROM *table_name*
+
+!! use filter to select specified objects !!
+
+SELECT first_name FROM users
+WHERE *filter_logic*;
+
+-----------------------------------
+
+CONSTRAINT *constraint_name* FOREIGN KEY (*column_name*) REFERENCES *referencing_table_name* (*referencing_table_column_name*)
+CONSTRAINT user_id_fk FOREIGN KEY (user_id) REFERENCES users (id)
+
+---------------------------------------
